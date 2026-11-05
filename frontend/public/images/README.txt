@@ -1,0 +1,1 @@
+The official SPECTRUM logo was not present in the supplied attachment or workspace. Place the original unmodified image here as spectrum-logo.png. The header uses a clearly labeled LOGO fallback until the image is added.
