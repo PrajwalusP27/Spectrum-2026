@@ -6,12 +6,18 @@ const currentFile = fileURLToPath(import.meta.url);
 const currentDirectory = path.dirname(currentFile);
 const envPath = path.resolve(currentDirectory, '../.env');
 
+// Load local environment variables when the file exists.
+// On Render, environment variables are provided by the platform.
 const envResult = dotenv.config({ path: envPath });
 
 if (envResult.error) {
-  console.error(`Failed to load environment file: ${envPath}`);
-  console.error(envResult.error.message);
-  process.exit(1);
+  if (envResult.error.code === 'ENOENT') {
+    console.info('No local .env file found. Using environment variables supplied by the deployment platform.');
+  } else {
+    console.error(`Failed to load environment file: ${envPath}`);
+    console.error(envResult.error.message);
+    process.exit(1);
+  }
 }
 
 const { default: app } = await import('./app.js');
