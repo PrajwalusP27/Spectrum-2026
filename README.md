@@ -54,7 +54,7 @@ Team registration website and private, read-only admin portal for the East West 
    npm run dev
    ```
 
-   Or run them separately with `npm run dev:frontend` and `npm run dev:backend`. The public site is at `http://localhost:5173`; the API is at `http://localhost:5000/api`.
+   Or run them separately with `npm run dev:frontend` and `npm run dev:backend`. The public site is at `http://localhost:5173`; the API is at `https://spectrum-2026-jet.vercel.app/`.
 
 ## Production deployment
 
